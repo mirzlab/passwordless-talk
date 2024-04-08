@@ -1,40 +1,291 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>HumanTalks - Passwordless</title>
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css">
+    <link rel="stylesheet" href="dist/theme/white.css">
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css">
+    <style type="text/css">
+      :root {
+        --r-main-font-size: 30px;
+      }
 
-		<title>reveal.js</title>
+      .container {
+        display: flex;
+      }
 
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
+      .col {
+        flex: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-auto-animate>
+          <h1>L'AUTHENTIFICATION SANS MOT DE PASSE</h1>
+          <h4> (ou <i>Passwordless</i>) </h4>
+        </section>
+        <section data-auto-animate>
+          <h2>Pourquoi présenter ce sujet ?</h2>
+        </section>
+        <section data-auto-animate>
+          <h2>Pourquoi présenter ce sujet ?</h2>
+          <h3 data-id="code-title">On en parle beaucoup !</h3>
+          <img width="600" src="./1.svg">
+        </section>
+        <section data-auto-animate>
+          <h2>Quelques concepts #1</h2>
+          <br />
+          <div class="container" style="font-size: 22px">
+            <div class="col">
+              <ul>
+                <li>- L’authentification == «Je vérifie qui est la personne derrière l’écran»<br/> - L’autorisation == «Je vérifie ce que la personne a le droit de faire»</li>
+              </ul>
+              != <br/>
+               <ul>
+                <li>L’autorisation == «Je vérifie ce que la personne a le droit de faire»</li>
+              </ul>
+            </div>
+            <div class="col">
+              <img width="360" src="./7.svg">
+            </div>
+          </div>
+        </section>
+        <section data-auto-animate>
+          <h2>Les méthodes d'authentification </h2>
+            <br />
+            <div class="container" style="font-size: 22px">
+              <div class="col">
+                <ul>
+                  <li>Le traditionnel login / mot de passe</li>
+                  <br />
+                  <li>Kerberos, une authentification basée sur la session Windows</li>
+                  <br />
+                  <li>De l'authentification forte: <ul>
+                      <li>Code OTP reçu par mail ou par SMS</li>
+                      <li>Code TOTP sur app mobile (Google authenticator)</li>
+                      <li>Code TOTP sur une clé physique</li>
+                      <li>Carte à puce / certificat</li>
+                      <li>...</li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              <div class="col">
+                <img width="250" src="./authn_methodes.svg">
+              </div>
+            </div>
+        </section>
+        <section>
+          <br />
+          <br />
+          <br />
+          <br />
+          <h4>En entreprise, le mot de passe reste très largement utilisé</h4>
+          <img width="600" src="./azure.svg">
+        </section>
+        <section>
+          <h3>Les problématiques du mot de passe #1</h3>
+          <img width="900" src="./authn_risques_mdp.svg">
+          <i style="float: right; font-size: 10px">Sources : FIDO2 Alliance, Forrester, Dashlane</i>
+        </section>
+        <section>
+          <h3>Les problématiques du mot de passe #2</h3>
+          <div class="container" style="font-size: 20px">
+            <div class="col">
+              <br />
+              <br />
+              <ul>
+                <li>Les utilisateurs réutilisent le même mot de passe entre plusieurs services (professionnels et personnels)</li>
+                <br />
+                <br />
+                <li>Les politiques de mot de passe en entreprise génèrent beaucoup de frustration</li>
+                <br />
+                <br />
+                <li>Les rotations de mot de passe sont inefficaces, les utilisateurs remplaçant simplement un nouveau caractère dans leur ancien mot de passe </li>
+                <br />
+                <br />
+                <li>Les attaques par phishing ou bruteforce sont très courantes pour le vol de d’identifiants </li>
+            </div>
+            <div class="col">
+              <img width="220px" src="./mdp3.svg">
+            </div>
+        </section>
+        <section data-auto-animate>
+          <h2>L'alliance FIDO</h2>
+        </section>
+        <section data-auto-animate>
+          <h2>L'alliance FIDO</h2>
+          <h5 data-id="code-title">Un groupement d’entreprise (Apple, Amazon, Google, Intel, Microsoft, …) …</h5>
+        </section>
+        <section data-auto-animate>
+          <h2>L'alliance FIDO</h2>
+          <h5 data-id="code-title">Un groupement d’entreprise (Apple, Amazon, Google, Intel, Microsoft, …) …</h5>
+          <h5 data-id="code-title">… dont l’objectif est de définir les nouveaux standards et promouvoir les technologies <b style="color: magenta">« phishing-resitant »</b> permettant une <b style="color: magenta">alternative aux mots de passe.</b> </h5>
+          <img width="600" src="./The_FIDO_Alliance_Logo.png">
+        </section>
+        <section data-auto-animate>
+          <h2>FIDO2, un ensemble de standard</h2>
+          <h6 style="font-size: 20px" data-id="code-title">Lorsqu’on accède à une application web, en remplacement du mot de passe, <b style="color: magenta">FIDO2 repose sur des « Authenticators »</b>
+          </h6>
+          <img width="1000" src="./fido_webauthn.svg">
+          <h6 style="font-size: 20px">Une authentification FIDO2 repose sur 2 protocoles : <b style="color: magenta">CTAP</b> et <b style="color: magenta">WebAuthn</b></h6>
+        </section>
+        <section data-auto-animate>
+          <h3>WebAuthn</h3>
+          <div class="container" style="font-size: 20px">
+            <div class="col">
+              <br />
+              <br />
+              <ul>
+                <li>WebAuthn introduit des nouvelles fonctions Javascript permettant aux navigateurs de gérer l’enregistrement et l’authentification d’un utilisateur à travers un Authenticator pour un site web</li>
+                <br />
+                <br />
+                <li>Les paramètres fournis à ces fonctions permettent de «customiser» l’authentification FIDO2 (quel type d’Authenticator souhaité (interne vs externe), quel algorithme de signature utilisé, …) </li>
+                <br />
+                <br />
+                <li>Ces nouvelles fonctions sont aujourd'hui largement supportées par les navigateurs (Chrome, Firefox, Edge, Safari, ...) </li>
+              </ul>
+            </div>
+            <div class="col" style="font-size: 34px">
+              <br />
+              <br />
 
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
-		</div>
+              <pre data-id="code-animation">
+                <code data-line-numbers class="hljs javascript">
+                    <script type="text/template">/*
+** Enregistrer un authenticator 
+** pour un compte utilisateur
+*/
+navigator.credentials.create({ ... });</script>
+                </code>
+              </pre>
+              <br />
+              <pre data-id="code-animation">
+                  <code data-line-numbers class="hljs javascript">
+                    <script type="text/template">/*
+** Authentifier un utilisateur 
+** avec son authenticator
+*/
+navigator.credentials.get({ ... });</script>
+                  </code>
+              </pre>
+            </div>
+        </section>
+        <section data-auto-animate>
+          <h3>#1 Exemple avec un authenticator externe</h3>
+          <img style="max-width: 200% !important; width: 1000px !important" src="./external.svg">
+        </section>
+        <section data-auto-animate>
+          <h3>#2 Exemple avec un authenticator interne</h3>
+          <img style="max-width: 200% !important; width: 1000px !important" src="./internal.svg">
+        </section>
+        <section data-auto-animate>
+          <h3>L'enregistrement avec un authenticator #1</h3>
+          <pre data-id="code-animation">
+            <code data-line-numbers class="hljs javascript">
+                <script type="text/template">
+const publicKeyCredentialCreationOptions = {
+    // Challenge généré par l'application
+    challenge: new Uint8Array([139, 66, 181, 87, 7, 203, ...]),
+    // "Relying Party", informations du site effectue l'enregistrement de l'authenticator
+    rp: {
+        name: "MyApplication",
+        id: "mywebapp.com",
+    },
+    // Informations de l'utilisateur en cours d'enregistrement
+    user: {
+        id: new Uint8Array([79, 252, 83, 72, 214, 7, 89, 26]),
+        name: "john_doe@gmail.com",
+        displayName: "John Doe",
+    },
+    // Algorithmes de clé publique acceptable par l'application
+    pubKeyCredParams: [{alg: -7, type: "public-key"}],
+    // Type d'authenticator requis
+    // cross-platform --> Authenticator externe
+    // platform --> Authentictor interne
+    authenticatorSelection: {
+        authenticatorAttachment: "cross-platform",
+    },
+    timeout: 60000,
+    attestation: "direct"
+};
 
-		<script src="dist/reveal.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
-		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
-				hash: true,
+const credential = await navigator.credentials.create({
+    publicKey: publicKeyCredentialCreationOptions
+});
+                </script>
+            </code>
+          </pre>
+        </section>
+        <section data-auto-animate>
+          <h3>L'enregistrement avec un authenticator #2</h3>
+          <img style="max-width: 150% !important; width: 1000px !important" src="./register_flow.svg">
+        </section>
+        <section data-auto-animate>
+          <h3>L'authentification avec un authenticator #1</h3>
+          <pre data-id="code-animation">
+            <code data-line-numbers class="hljs javascript">
+              <script type="text/template">
+const publicKeyCredentialRequestOptions = {
+    // Challenge généré par l'application et envoyé vers l'authenticator
+    challenge: new Uint8Array([79, 252, 83, 72, 214, 7, 89, 26]),
+    // Identifiant du site qui effectue l'authentification
+    rpId: 'mywebapp.com'
+    // Permet de limiter à une sélection de credentials enregistrés spécifiques
+    allowCredentials: [],
+    timeout: 60000
+}
 
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-			});
-		</script>
-	</body>
+const assertion = await navigator.credentials.get({
+    publicKey: publicKeyCredentialRequestOptions
+});
+        </script>
+        </code>
+        </pre>
+        </section>
+        <section data-auto-animate>
+          <h3>L'authentification avec un authenticator #2</h3>
+          <img style="max-width: 150% !important; width: 1000px !important" src="./authn_flow.svg">
+        </section>
+        <section data-auto-animate>
+          <h1>DEMO</h1>
+        </section>
+        <section data-auto-animate>
+          <h3>Pour aller plus loin ...</h3>
+          <ul>
+            <li>FIDO2, en authentification simple ou en deuxième facteur ? </li>
+            <br />
+            <br />
+            <li>Passkey, l'art de répliquer les enregistrements FIDO2 sur tous vos devices</li>
+            <br />
+            <br />
+            <li>FIDO2 en entreprise, quelle stratégie et quelles problématiques ? (process d'achat et de distribution des authenticators, gestion de l'oubli/perte, accompagnement au changement, ...)</li>
+          </ul>
+        </section>
+        <section data-auto-animate>
+          <h1>MERCI</h1>
+        </section>
+      </div>
+    </div>
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+      });
+    </script>
+  </body>
 </html>
