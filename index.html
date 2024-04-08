@@ -26,7 +26,7 @@
   <body>
     <div class="reveal">
       <div class="slides">
-        <section data-auto-animate>
+        <section>
           <img width="300" src="./NDA_LOGO_RVB.jpg">
           <h1>L'AUTHENTIFICATION SANS MOT DE PASSE</h1>
           <h4> (ou <i>Passwordless</i>) </h4>
@@ -39,7 +39,7 @@
           <h3 data-id="code-title">On en parle beaucoup !</h3>
           <img width="600" src="./1.svg">
         </section>
-        <section data-auto-animate>
+        <section>
           <h2>Quelques concepts #1</h2>
           <br />
           <div class="container">
@@ -57,7 +57,7 @@
             </div>
           </div>
         </section>
-        <section data-auto-animate>
+        <section>
           <h2>Les méthodes d'authentification en entreprise </h2>
             <br />
             <div class="container" style="font-size: 22px">
@@ -127,14 +127,14 @@
           <h5 data-id="code-title">… dont l’objectif est de définir les nouveaux standards et promouvoir les technologies <b style="color: magenta">« phishing-resitant »</b> permettant une <b style="color: magenta">alternative aux mots de passe.</b> </h5>
           <img width="600" src="./The_FIDO_Alliance_Logo.png">
         </section>
-        <section data-auto-animate>
+        <section>
           <h2>FIDO2, un ensemble de standard</h2>
           <h6 style="font-size: 20px" data-id="code-title">Lorsqu’on accède à une application web, en remplacement du mot de passe, <b style="color: magenta">FIDO2 repose sur des « Authenticators »</b>
           </h6>
           <img width="1000" src="./fido_webauthn.svg">
           <h6 style="font-size: 20px">Une authentification FIDO2 repose sur 2 protocoles : <b style="color: magenta">CTAP</b> et <b style="color: magenta">WebAuthn</b></h6>
         </section>
-        <section data-auto-animate>
+        <section>
           <h3>WebAuthn</h3>
           <div class="container" style="font-size: 20px">
             <div class="col">
@@ -175,15 +175,15 @@ navigator.credentials.get({ ... });</script>
               </pre>
             </div>
         </section>
-        <section data-auto-animate>
+        <section>
           <h3>#1 Exemple avec un authenticator externe</h3>
           <img style="max-width: 200% !important; width: 1000px !important" src="./external.svg">
         </section>
-        <section data-auto-animate>
+        <section>
           <h3>#2 Exemple avec un authenticator interne</h3>
           <img style="max-width: 200% !important; width: 1000px !important" src="./internal.svg">
         </section>
-        <section data-auto-animate>
+        <section>
           <h3>L'enregistrement avec un authenticator #1</h3>
           <pre data-id="code-animation">
             <code data-line-numbers class="hljs javascript">
@@ -221,11 +221,11 @@ const credential = await navigator.credentials.create({
             </code>
           </pre>
         </section>
-        <section data-auto-animate>
+        <section>
           <h3>L'enregistrement avec un authenticator #2</h3>
           <img style="max-width: 100% !important; width: 1000px !important" src="./register_flow.svg">
         </section>
-        <section data-auto-animate>
+        <section>
           <h3>L'authentification avec un authenticator #1</h3>
           <pre data-id="code-animation">
             <code data-line-numbers class="hljs javascript">
@@ -247,14 +247,14 @@ const assertion = await navigator.credentials.get({
         </code>
         </pre>
         </section>
-        <section data-auto-animate>
+        <section>
           <h3>L'authentification avec un authenticator #2</h3>
           <img style="max-width: 100% !important; width: 1000px !important" src="./authn_flow.svg">
         </section>
-        <section data-auto-animate>
+        <section>
           <h1>DEMO</h1>
         </section>
-        <section data-auto-animate>
+        <section>
           <h3>Pour aller plus loin ...</h3>
           <ul>
             <li>FIDO2, en authentification simple ou en deuxième facteur ? </li>
@@ -266,7 +266,7 @@ const assertion = await navigator.credentials.get({
             <li>FIDO2 en entreprise, quelle stratégie et quelles problématiques ? (process d'achat et de distribution des authenticators, gestion de l'oubli/perte, accompagnement au changement, ...)</li>
           </ul>
         </section>
-        <section data-auto-animate>
+        <section>
           <h1>MERCI</h1>
         </section>
       </div>
