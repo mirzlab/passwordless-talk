@@ -223,7 +223,7 @@ const credential = await navigator.credentials.create({
         </section>
         <section data-auto-animate>
           <h3>L'enregistrement avec un authenticator #2</h3>
-          <img style="max-width: 150% !important; width: 1000px !important" src="./register_flow.svg">
+          <img style="max-width: 100% !important; width: 1000px !important" src="./register_flow.svg">
         </section>
         <section data-auto-animate>
           <h3>L'authentification avec un authenticator #1</h3>
@@ -249,7 +249,7 @@ const assertion = await navigator.credentials.get({
         </section>
         <section data-auto-animate>
           <h3>L'authentification avec un authenticator #2</h3>
-          <img style="max-width: 150% !important; width: 1000px !important" src="./authn_flow.svg">
+          <img style="max-width: 100% !important; width: 1000px !important" src="./authn_flow.svg">
         </section>
         <section data-auto-animate>
           <h1>DEMO</h1>
@@ -281,6 +281,7 @@ const assertion = await navigator.credentials.get({
       // - https://revealjs.com/config/
       Reveal.initialize({
         hash: true,
+        slideNumber: true,
         // Learn about plugins: https://revealjs.com/plugins/
         plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
       });
