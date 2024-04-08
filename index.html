@@ -224,6 +224,7 @@ const credential = await navigator.credentials.create({
         <section>
           <h3>L'enregistrement avec un authenticator #2</h3>
           <img style="max-width: 100% !important; width: 1000px !important" src="./register_flow.svg">
+          <p style="font-size: 20px">L'authenticator génère une paire de clés asymétriques pour chaque site enregistré. La signature des données par l'authenticator permet au Relying Party d'enregistrer l'authenticator, puis d'authentifier l'utilisateur.</p>
         </section>
         <section>
           <h3>L'authentification avec un authenticator #1</h3>
@@ -257,11 +258,11 @@ const assertion = await navigator.credentials.get({
         <section>
           <h3>Pour aller plus loin ...</h3>
           <ul>
+            <li>Spécifications WebAuthn :  <a href="https://www.w3.org/TR/webauthn-2/">https://www.w3.org/TR/webauthn-2/</a></li>
+            <br />
             <li>FIDO2, en authentification simple ou en deuxième facteur ? </li>
             <br />
-            <br />
-            <li>Passkey, l'art de répliquer les enregistrements FIDO2 sur tous vos devices</li>
-            <br />
+            <li>Passkey, l'art de répliquer les clés FIDO2 sur tous vos devices</li>
             <br />
             <li>FIDO2 en entreprise, quelle stratégie et quelles problématiques ? (process d'achat et de distribution des authenticators, gestion de l'oubli/perte, accompagnement au changement, ...)</li>
           </ul>
